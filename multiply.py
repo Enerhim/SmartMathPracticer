@@ -1,6 +1,5 @@
 import random
 import time
-from warnings import catch_warnings
 
 def accuracy(r, w):
     a = ((len(r)) / ((len(w)) + (len(r)) )) * 100
@@ -55,6 +54,9 @@ while True:
         print("Correct Ones: ", len(correctset))
         print("Wrong Ones: ", len(wrongset))
         try:
+            totalt = 0
+            for time in timeset: totalt += time
+            print(f"Total Time: {totalt}")
             print(f"Average Time: {mean(timeset)}s")
             print(f"Accuracy {accuracy(correctset, wrongset)}%")
         except(ZeroDivisionError):
